@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  font-family: 'Poppins', sans-serif; /* Updated font */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif; /* Updated font */
+  font-weight: bold; /* Ensure headers are bold */
+}
+
+.bg-primary {
+  background-color: #A51C30; /* Primary background color */
+}
+
+.text-secondary {
+  color: #ffffff; /* Secondary text color */
+}
+
+.bg-secondary {
+  background-color: #ffffff; /* Secondary background color */
+}
+
+.text-primary {
+  color: #A51C30; /* Primary text color */
+}
+
+.text-gray-600 {
+  color: #4b5563;
+}
+
+.bg-gray-100 {
+  background-color: #f3f4f6;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-black {
+  color: black;
+}
+
+.form-title, .form-label {
+  color: black; /* Ensuring form titles and labels are black */
+  font-weight: bold; /* Ensure form titles and labels are bold */
+}
+
+.input {
+  background-color: #ffffff !important; /* Ensure input background is white */
+  border: 1px solid #000000; /* Ensure input border is black */
+  border-radius: 4px;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+}
+
+.button-primary {
+  background-color: #A51C30;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button-primary:hover {
+  background-color: #941824;
+}
+
+.button-secondary {
+  background-color: white;
+  color: #A51C30;
+  border: 1px solid #A51C30;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button-secondary:hover {
+  background-color: #f3f4f6;
+  color: #941824;
+}
+
+/* Add any additional custom styles here */

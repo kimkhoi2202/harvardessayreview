@@ -1,8 +1,6 @@
-// page.tsx
-import HarvardReviewEssay from "@/components/harvardreviewessay";
+// page.jsx
+import Component from "@/components/component";
 
 export default function Home() {
-  return (
-    <HarvardReviewEssay />
-  );
+  return <Component />;
 }

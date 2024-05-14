@@ -1,23 +1,32 @@
-// layout.tsx
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+// app/layout.tsx
+import type { Metadata } from 'next';
+import { Eczar } from 'next/font/google';
+import { Cormorant_Garamond } from 'next/font/google';
+import { Poppins } from 'next/font/google';
+import './styles.css'; // Ensure this is correctly imported
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-poppins',
+  weight: ['400', '500', '600', '700'], // specify weights
+});
 
 export const metadata: Metadata = {
   title: "Harvard Essay Review",
   description: "Get your college essay reviewed by a Harvard student for only $5!",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+interface LayoutProps {
   children: React.ReactNode;
-}>) {
+}
+
+export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={poppins.variable}>
+        {children}
+      </body>
     </html>
   );
 }
