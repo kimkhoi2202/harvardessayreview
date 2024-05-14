@@ -1,4 +1,4 @@
-require('dotenv').config(); // Load environment variables from .env file
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const { google } = require("googleapis");
@@ -71,7 +71,7 @@ function startServer(auth) {
 
     sheets.spreadsheets.values.append(
       {
-        spreadsheetId: process.env.GOOGLE_SHEETS_ID, // Use environment variable
+        spreadsheetId: process.env.GOOGLE_SHEETS_ID,
         range: "Sheet1!A1:D1",
         valueInputOption: "RAW",
         requestBody: resource,
@@ -92,7 +92,7 @@ function startServer(auth) {
   });
 
   app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
   });
 }
 

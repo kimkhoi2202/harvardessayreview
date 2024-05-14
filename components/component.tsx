@@ -26,7 +26,7 @@ export default function Component() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3001/submit", {
+      const response = await fetch("https://harvardessayreview.vercel.app/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -164,7 +164,7 @@ export default function Component() {
                   <Input id="essay" placeholder="Provide a link to your Google Docs essay" type="text" className="input" value={formData.essay} onChange={handleChange} />
                 </div>
               </div>
-              <Button className="mt-6 w-full" type="submit" variant="primary">
+              <Button className="mt-6 w-full button-primary" type="submit" variant="primary">
                 Submit ✨
               </Button>
             </form>
