@@ -26,28 +26,28 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-  font-family: 'Poppins', sans-serif; /* Updated font */
+  font-family: 'Poppins', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif; /* Updated font */
-  font-weight: bold; /* Ensure headers are bold */
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
 }
 
 .bg-primary {
-  background-color: #A51C30; /* Primary background color */
+  background-color: #A51C30;
 }
 
 .text-secondary {
-  color: #ffffff; /* Secondary text color */
+  color: #ffffff;
 }
 
 .bg-secondary {
-  background-color: #ffffff; /* Secondary background color */
+  background-color: #ffffff;
 }
 
 .text-primary {
-  color: #A51C30; /* Primary text color */
+  color: #A51C30;
 }
 
 .text-gray-600 {
@@ -67,17 +67,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .form-title, .form-label {
-  color: black; /* Ensuring form titles and labels are black */
-  font-weight: bold; /* Ensure form titles and labels are bold */
+  color: black;
+  font-weight: bold;
 }
 
 .input {
-  background-color: #ffffff !important; /* Ensure input background is white */
-  border: 1px solid #000000; /* Ensure input border is black */
+  background-color: #ffffff !important;
+  border: 1px solid #000000;
   border-radius: 4px;
   padding: 10px;
   width: 100%;
   font-size: 16px;
+  color: #000000;
+}
+
+.input::placeholder {
+  color: #999999;
 }
 
 .button-primary {
@@ -108,5 +113,3 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #f3f4f6;
   color: #941824;
 }
-
-/* Add any additional custom styles here */

@@ -1,9 +1,50 @@
+"use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 
 export default function Component() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    social: "",
+    essay: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { id, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("http://localhost:3001/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert("Successfully submitted!");
+      } else {
+        alert("Error submitting form");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Error submitting form");
+    }
+  };
+
   return (
     <>
       <header className="bg-primary text-secondary py-4 px-6 md:px-12">
@@ -104,27 +145,27 @@ export default function Component() {
         <section className="bg-gray-100 py-16 md:py-24">
           <div className="container mx-auto px-6 md:px-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-black">Get Started</h2>
-            <form className="max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg">
+            <form className="max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg" onSubmit={handleSubmit}>
               <div className="grid gap-6">
                 <div>
                   <Label htmlFor="name" className="form-label">Full Name</Label>
-                  <Input id="name" placeholder="Enter your name" type="text" className="input" />
+                  <Input id="name" placeholder="Enter your name" type="text" className="input" value={formData.name} onChange={handleChange} />
                 </div>
                 <div>
                   <Label htmlFor="email" className="form-label">Email</Label>
-                  <Input id="email" placeholder="Enter your email" type="email" className="input" />
+                  <Input id="email" placeholder="Enter your email" type="email" className="input" value={formData.email} onChange={handleChange} />
                 </div>
                 <div>
                   <Label htmlFor="social" className="form-label">Social Media Handles</Label>
-                  <Input id="social" placeholder="Enter your social media handles" type="text" className="input" />
+                  <Input id="social" placeholder="Enter your social media handles" type="text" className="input" value={formData.social} onChange={handleChange} />
                 </div>
                 <div>
                   <Label htmlFor="essay" className="form-label">Essay Link</Label>
-                  <Input id="essay" placeholder="Provide a link to your Google Docs essay" type="text" className="input" />
+                  <Input id="essay" placeholder="Provide a link to your Google Docs essay" type="text" className="input" value={formData.essay} onChange={handleChange} />
                 </div>
               </div>
-              <Button className="mt-6 w-full button-primary" type="submit" variant="default">
-                Submit
+              <Button className="mt-6 w-full" type="submit" variant="primary">
+                Submit ✨
               </Button>
             </form>
           </div>
