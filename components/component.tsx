@@ -134,7 +134,7 @@ export default function Component() {
         <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
           <p className="text-sm">© 2024 Harvard Essay Review. All rights reserved.</p>
           <p className="text-sm">
-            Website created by
+            Website created by&nbsp;
             <a className="hover:underline text-secondary" href="#">
               Kim Khoi Lam
             </a>
