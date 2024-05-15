@@ -6,13 +6,13 @@ const SCOPES = ["https://www.googleapis.com/auth/spreadsheets", "https://www.goo
 async function authorize() {
   const credentials = {
     web: {
-      client_id: process.env.GOOGLE_CLIENT_ID,
-      project_id: process.env.GOOGLE_PROJECT_ID,
-      auth_uri: process.env.GOOGLE_AUTH_URI,
-      token_uri: process.env.GOOGLE_TOKEN_URI,
-      auth_provider_x509_cert_url: process.env.GOOGLE_AUTH_PROVIDER_X509_CERT_URL,
-      client_secret: process.env.GOOGLE_CLIENT_SECRET,
-      redirect_uris: [process.env.GOOGLE_REDIRECT_URIS]
+      client_id: process.env.GOOGLE_CLIENT_ID as string,
+      project_id: process.env.GOOGLE_PROJECT_ID as string,
+      auth_uri: process.env.GOOGLE_AUTH_URI as string,
+      token_uri: process.env.GOOGLE_TOKEN_URI as string,
+      auth_provider_x509_cert_url: process.env.GOOGLE_AUTH_PROVIDER_X509_CERT_URL as string,
+      client_secret: process.env.GOOGLE_CLIENT_SECRET as string,
+      redirect_uris: [process.env.GOOGLE_REDIRECT_URIS as string]
     }
   };
   
@@ -21,11 +21,11 @@ async function authorize() {
 
   // Set credentials directly from environment variables
   const token = {
-    access_token: process.env.GOOGLE_ACCESS_TOKEN,
-    refresh_token: process.env.GOOGLE_REFRESH_TOKEN,
-    scope: process.env.GOOGLE_SCOPE,
-    token_type: process.env.GOOGLE_TOKEN_TYPE,
-    expiry_date: parseInt(process.env.GOOGLE_EXPIRY_DATE, 10)
+    access_token: process.env.GOOGLE_ACCESS_TOKEN as string,
+    refresh_token: process.env.GOOGLE_REFRESH_TOKEN as string,
+    scope: process.env.GOOGLE_SCOPE as string,
+    token_type: process.env.GOOGLE_TOKEN_TYPE as string,
+    expiry_date: parseInt(process.env.GOOGLE_EXPIRY_DATE as string, 10)
   };
   oAuth2Client.setCredentials(token);
   
@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
 
   try {
     await sheets.spreadsheets.values.append({
-      spreadsheetId: process.env.GOOGLE_SHEETS_ID,
+      spreadsheetId: process.env.GOOGLE_SHEETS_ID as string,
       range: 'Sheet1!A1:D1',
       valueInputOption: 'RAW',
       requestBody: resource,
