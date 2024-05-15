@@ -1,23 +1,34 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { google } from 'googleapis';
-import fs from 'fs';
-import path from 'path';
 
 const SCOPES = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive.file"];
-const TOKEN_PATH = path.join(process.cwd(), 'token.json');
 
 async function authorize() {
-  const content = fs.readFileSync(path.join(process.cwd(), 'credentials.json'), 'utf-8');
-  const credentials = JSON.parse(content);
+  const credentials = {
+    web: {
+      client_id: process.env.GOOGLE_CLIENT_ID,
+      project_id: process.env.GOOGLE_PROJECT_ID,
+      auth_uri: process.env.GOOGLE_AUTH_URI,
+      token_uri: process.env.GOOGLE_TOKEN_URI,
+      auth_provider_x509_cert_url: process.env.GOOGLE_AUTH_PROVIDER_X509_CERT_URL,
+      client_secret: process.env.GOOGLE_CLIENT_SECRET,
+      redirect_uris: [process.env.GOOGLE_REDIRECT_URIS]
+    }
+  };
+  
   const { client_secret, client_id, redirect_uris } = credentials.web;
   const oAuth2Client = new google.auth.OAuth2(client_id, client_secret, redirect_uris[0]);
 
-  try {
-    const token = fs.readFileSync(TOKEN_PATH, 'utf-8');
-    oAuth2Client.setCredentials(JSON.parse(token));
-  } catch (error) {
-    console.error('Error loading token:', error);
-  }
+  // Set credentials directly from environment variables
+  const token = {
+    access_token: process.env.GOOGLE_ACCESS_TOKEN,
+    refresh_token: process.env.GOOGLE_REFRESH_TOKEN,
+    scope: process.env.GOOGLE_SCOPE,
+    token_type: process.env.GOOGLE_TOKEN_TYPE,
+    expiry_date: parseInt(process.env.GOOGLE_EXPIRY_DATE, 10)
+  };
+  oAuth2Client.setCredentials(token);
+  
   return oAuth2Client;
 }
 
