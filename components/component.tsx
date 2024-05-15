@@ -26,7 +26,7 @@ export default function Component() {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://harvardessayreview.vercel.app/submit", {
+      const response = await fetch("/api/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
