@@ -1,4 +1,3 @@
-// page.jsx
 import Component from "@/components/component";
 
 export default function Home() {

@@ -162,7 +162,7 @@ export default function Component() {
           </div>
         </section>
         <section id="about" className="bg-[#A51C30] text-white py-16 md:py-24">
-          <div className="container mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-8 items-center">
+          <div className="container mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-48 items-center">
             <div className="flex justify-center md:justify-end">
               <iframe
                 width="560"
@@ -175,7 +175,7 @@ export default function Component() {
                 className="w-full max-w-md rounded-lg shadow-lg"
               />
             </div>
-            <div>
+            <div className="space-y-4">
               <h2 className="text-3xl md:text-4xl font-sans font-bold mb-4">About Me &amp; My Reviews</h2>
               <p className="text-lg font-sans mb-8">
                 I&apos;m passionate about helping you edit your essays. My acceptances include Harvard, Yale, Princeton, Johns Hopkins, Northwestern, Duke, Cornell, Tufts, Emory, University of Richmond, Case Western Reserve, Northeastern, UMass Amherst, Tulane, and UMass Boston. My expertise and experience are at your service to enhance your writing.
