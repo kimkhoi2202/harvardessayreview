@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import Image from 'next/image';
 import React, { useState } from "react";
 
 interface IconProps {
@@ -101,7 +102,7 @@ export default function Component() {
               </div>
             </div>
             <div className="flex justify-center md:justify-end">
-              <img
+              <Image
                 alt="Essay Review"
                 className="w-full max-w-md rounded-lg shadow-lg"
                 height={400}
@@ -225,7 +226,7 @@ export default function Component() {
                 Submit
               </Button>
             </form>
-            <p className="text-center mt-4">After you submit the form, I will reach out to you about the payments. Payments integrated into the website feature will be coming soon. Thank you for your patience.</p>
+            <p className="text-center mt-8 mb-4">After you submit the form, I will reach out to you about the payments. Payments integrated into the website feature will be coming soon. Thank you for your patience.</p>
           </div>
         </section>
       </main>
