@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import Image from 'next/image';
+import Image from "next/image";
 import React, { useState } from "react";
 
 interface IconProps {
@@ -18,7 +18,7 @@ export default function Component() {
     social: "",
     essay: "",
     wordCount: 0,
-    additionalComment: ""
+    additionalComment: "",
   });
   const [cost, setCost] = useState(0);
 
@@ -68,20 +68,37 @@ export default function Component() {
             <h1 className="text-2xl font-sans font-bold">Harvard Essay Review</h1>
           </div>
           <nav className="hidden md:flex items-center space-x-6">
-            <button className="hover:underline font-sans text-white" onClick={() => document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' })}>
+            <button
+              className="hover:underline font-sans text-white"
+              onClick={() => document.getElementById("home")?.scrollIntoView({ behavior: "smooth" })}
+            >
               Home
             </button>
-            <button className="hover:underline font-sans text-white" onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}>
+            <button
+              className="hover:underline font-sans text-white"
+              onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
+            >
               About
             </button>
-            <button className="hover:underline font-sans text-white" onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}>
+            <button
+              className="hover:underline font-sans text-white"
+              onClick={() => document.getElementById("how-it-works")?.scrollIntoView({ behavior: "smooth" })}
+            >
               How it Works
             </button>
-            <button className="hover:underline font-sans text-white" onClick={() => document.getElementById('get-started')?.scrollIntoView({ behavior: 'smooth' })}>
+            <button
+              className="hover:underline font-sans text-white"
+              onClick={() => document.getElementById("get-started")?.scrollIntoView({ behavior: "smooth" })}
+            >
               Get Started
             </button>
           </nav>
-          <Button className="font-sans" onClick={() => document.getElementById('get-started')?.scrollIntoView({ behavior: 'smooth' })}>Get Started</Button>
+          <Button
+            className="font-sans"
+            onClick={() => document.getElementById("get-started")?.scrollIntoView({ behavior: "smooth" })}
+          >
+            Get Started
+          </Button>
         </div>
       </header>
       <main>
@@ -95,7 +112,7 @@ export default function Component() {
                 Elevate your essays with expert feedback from a Harvard student. My affordable service ensures your essay stands out in competitive applications, giving you a crucial edge.
               </p>
               <div className="flex items-center space-x-4">
-                <Button variant="learnMore" onClick={() => document.getElementById('get-started')?.scrollIntoView({ behavior: 'smooth' })}>
+                <Button variant="learnMore" onClick={() => document.getElementById("get-started")?.scrollIntoView({ behavior: "smooth" })}>
                   Get Started
                 </Button>
                 <p className="text-lg font-sans">Reviewed by a Harvard student</p>
@@ -134,7 +151,7 @@ export default function Component() {
               <div className="bg-white p-6 rounded-lg shadow-lg text-center">
                 <ReplyIcon className="w-12 h-12 mb-4 text-[#A51C30] mx-auto" />
                 <h3 className="text-xl font-sans font-bold mb-2 text-black">Receive Feedback</h3>
-                <p className="text-gray-600 font-sans text-black">Receive detailed, actionable feedback to improve your essay's quality and effectiveness.</p>
+                <p className="text-gray-600 font-sans text-black">Receive detailed, actionable feedback to improve your essay&apos;s quality and effectiveness.</p>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-lg text-center">
                 <FilePenIcon className="w-12 h-12 mb-4 text-[#A51C30] mx-auto" />
@@ -159,9 +176,9 @@ export default function Component() {
               />
             </div>
             <div>
-              <h2 className="text-3xl md:text-4xl font-sans font-bold mb-4">About Me & My Reviews</h2>
+              <h2 className="text-3xl md:text-4xl font-sans font-bold mb-4">About Me &amp; My Reviews</h2>
               <p className="text-lg font-sans mb-8">
-                I'm passionate about helping you edit your essays. My acceptances include Harvard, Yale, Princeton, Johns Hopkins, Northwestern, Duke, Cornell, Tufts, Emory, University of Richmond, Case Western Reserve, Northeastern, UMass Amherst, Tulane, and UMass Boston. My expertise and experience are at your service to enhance your writing.
+                I&apos;m passionate about helping you edit your essays. My acceptances include Harvard, Yale, Princeton, Johns Hopkins, Northwestern, Duke, Cornell, Tufts, Emory, University of Richmond, Case Western Reserve, Northeastern, UMass Amherst, Tulane, and UMass Boston. My expertise and experience are at your service to enhance your writing.
               </p>
               <p className="text-lg font-sans mb-8">
                 I am dedicated to providing high-quality feedback to help you improve your essays. With my guidance, you can refine your work to perfection.
