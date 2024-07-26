@@ -33,17 +33,17 @@ async function authorize() {
 }
 
 export async function POST(request: NextRequest) {
-  const { name, email, social, essay } = await request.json();
+  const { name, email, social, wordCount, essay, additionalComment } = await request.json();
   const auth = await authorize();
   const sheets = google.sheets({ version: 'v4', auth });
 
-  const values = [[name, email, social, essay]];
+  const values = [[name, email, social, wordCount, essay, additionalComment]];
   const resource = { values };
 
   try {
     await sheets.spreadsheets.values.append({
       spreadsheetId: process.env.GOOGLE_SHEETS_ID as string,
-      range: 'Sheet1!A1:D1',
+      range: 'Sheet1!A1:F1',
       valueInputOption: 'RAW',
       requestBody: resource,
     });
