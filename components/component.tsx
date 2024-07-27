@@ -5,6 +5,13 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import React, { useState } from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
 
 interface IconProps {
   className?: string;
@@ -70,32 +77,42 @@ export default function Component() {
           <nav className="hidden md:flex items-center space-x-6">
             <button
               className="hover:underline font-sans text-white"
-              onClick={() => document.getElementById("home")?.scrollIntoView({ behavior: "smooth" })}
+              onClick={() =>
+                document.getElementById("home")?.scrollIntoView({ behavior: "smooth" })
+              }
             >
               Home
             </button>
             <button
               className="hover:underline font-sans text-white"
-              onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
+              onClick={() =>
+                document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })
+              }
             >
               About
             </button>
             <button
               className="hover:underline font-sans text-white"
-              onClick={() => document.getElementById("how-it-works")?.scrollIntoView({ behavior: "smooth" })}
+              onClick={() =>
+                document.getElementById("how-it-works")?.scrollIntoView({ behavior: "smooth" })
+              }
             >
               How it Works
             </button>
             <button
               className="hover:underline font-sans text-white"
-              onClick={() => document.getElementById("get-started")?.scrollIntoView({ behavior: "smooth" })}
+              onClick={() =>
+                document.getElementById("get-started")?.scrollIntoView({ behavior: "smooth" })
+              }
             >
               Get Started
             </button>
           </nav>
           <Button
             className="font-sans"
-            onClick={() => document.getElementById("get-started")?.scrollIntoView({ behavior: "smooth" })}
+            onClick={() =>
+              document.getElementById("get-started")?.scrollIntoView({ behavior: "smooth" })
+            }
           >
             Get Started
           </Button>
@@ -109,10 +126,17 @@ export default function Component() {
                 Affordable Essay Review by a Harvard Student
               </h2>
               <p className="text-lg font-sans mb-8">
-                Elevate your essays with expert feedback from a Harvard student. My affordable service ensures your essay stands out in competitive applications, giving you a crucial edge.
+                Elevate your essays with expert feedback from a Harvard student. My affordable
+                service ensures your essay stands out in competitive applications, giving you a
+                crucial edge.
               </p>
               <div className="flex items-center space-x-4">
-                <Button variant="learnMore" onClick={() => document.getElementById("get-started")?.scrollIntoView({ behavior: "smooth" })}>
+                <Button
+                  variant="learnMore"
+                  onClick={() =>
+                    document.getElementById("get-started")?.scrollIntoView({ behavior: "smooth" })
+                  }
+                >
                   Get Started
                 </Button>
                 <p className="text-lg font-sans">Reviewed by a Harvard student</p>
@@ -132,56 +156,141 @@ export default function Component() {
         </section>
         <section id="how-it-works" className="bg-gray-100 py-16 md:py-24">
           <div className="container mx-auto px-6 md:px-12">
-            <h2 className="text-3xl md:text-4xl font-sans font-bold mb-8 text-center text-black">How it Works</h2>
+            <h2 className="text-3xl md:text-4xl font-sans font-bold mb-8 text-center text-black">
+              How it Works
+            </h2>
             <div className="grid md:grid-cols-4 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-lg text-center">
                 <UploadIcon className="w-12 h-12 mb-4 text-[#A51C30] mx-auto" />
                 <h3 className="text-xl font-sans font-bold mb-2 text-black">Upload Your Essay</h3>
                 <p className="text-gray-600 font-sans text-black">
-                  Share a link to your Google Docs essay with editing privileges. My process is secure and easy to follow.
+                  Share a link to your Google Docs essay with editing privileges. My process is
+                  secure and easy to follow.
                 </p>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-lg text-center">
                 <CheckIcon className="w-12 h-12 mb-4 text-[#A51C30] mx-auto" />
                 <h3 className="text-xl font-sans font-bold mb-2 text-black">Get Reviewed</h3>
                 <p className="text-gray-600 font-sans text-black">
-                  Your essay will be reviewed by me within 48 hours. Get comprehensive feedback quickly and efficiently.
+                  Your essay will be reviewed by me within 48 hours. Get comprehensive feedback
+                  quickly and efficiently.
                 </p>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-lg text-center">
                 <ReplyIcon className="w-12 h-12 mb-4 text-[#A51C30] mx-auto" />
                 <h3 className="text-xl font-sans font-bold mb-2 text-black">Receive Feedback</h3>
-                <p className="text-gray-600 font-sans text-black">Receive detailed, actionable feedback to improve your essay&apos;s quality and effectiveness.</p>
+                <p className="text-gray-600 font-sans text-black">
+                  Receive detailed, actionable feedback to improve your essay&apos;s quality and
+                  effectiveness.
+                </p>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-lg text-center">
                 <FilePenIcon className="w-12 h-12 mb-4 text-[#A51C30] mx-auto" />
                 <h3 className="text-xl font-sans font-bold mb-2 text-black">3 Edits Guaranteed</h3>
-                <p className="text-gray-600 font-sans text-black">I offer up to 3 rounds of edits to ensure your complete satisfaction.</p>
+                <p className="text-gray-600 font-sans text-black">
+                  I offer up to 3 rounds of edits to ensure your complete satisfaction.
+                </p>
               </div>
             </div>
           </div>
         </section>
         <section id="about" className="bg-[#A51C30] text-white py-16 md:py-24">
-          <div className="container mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-48 items-center">
-            <div className="flex justify-center md:justify-end">
+          <div className="container mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-8 md:gap-32 items-center">
+            <div className="flex flex-col items-center md:justify-center md:space-y-8">
               <iframe
                 width="560"
                 height="315"
                 src="https://www.youtube.com/embed/2Mvw7ZQ-abY?si=Kamm-wsEDXK3HoSW"
                 title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
-                className="w-full max-w-md rounded-lg shadow-lg"
+                className="w-full max-w-md rounded-lg shadow-lg mb-8"
               />
+              <Carousel className="w-full max-w-md" style={{ height: "950px" }}>
+                <CarouselContent className="flex">
+                  <CarouselItem>
+                    <div className="flex justify-center items-center h-full">
+                      <Image
+                        alt="Testimonial 1"
+                        src="/testimonial1.jpg"
+                        className="carousel-image rounded-lg"
+                        layout="responsive"
+                        width={500}
+                        height={400}
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="flex justify-center items-center h-full">
+                      <Image
+                        alt="Testimonial 2"
+                        src="/testimonial2.jpg"
+                        className="carousel-image rounded-lg"
+                        layout="responsive"
+                        width={500}
+                        height={400}
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="flex justify-center items-center h-full">
+                      <Image
+                        alt="Testimonial 3"
+                        src="/testimonial3.jpg"
+                        className="carousel-image rounded-lg"
+                        layout="responsive"
+                        width={500}
+                        height={400}
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="flex justify-center items-center h-full">
+                      <Image
+                        alt="Testimonial 4"
+                        src="/testimonial4.jpg"
+                        className="carousel-image rounded-lg"
+                        layout="responsive"
+                        width={500}
+                        height={400}
+                      />
+                    </div>
+                  </CarouselItem>
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
             </div>
             <div className="space-y-4">
-              <h2 className="text-3xl md:text-4xl font-sans font-bold mb-4">About Me &amp; My Reviews</h2>
+              <h2 className="text-3xl md:text-4xl font-sans font-bold mb-4">About Me</h2>
               <p className="text-lg font-sans mb-8">
-                I&apos;m passionate about helping you edit your essays. My acceptances include Harvard, Yale, Princeton, Johns Hopkins, Northwestern, Duke, Cornell, Tufts, Emory, University of Richmond, Case Western Reserve, Northeastern, UMass Amherst, Tulane, and UMass Boston. My expertise and experience are at your service to enhance your writing.
+                Hello! I’m an incoming freshman at Harvard College planning on concentrating in
+                Chemical and Physical Biology on the pre-medical pathway. My own essays, especially
+                my common application personal statement, were some of the strongest parts of my
+                applicant (coming directly from my Yale Admissions Officer), and I’m passionate
+                about helping students edit their college essays.
               </p>
+              <p className="text-lg font-sans mb-8">My college acceptances include:</p>
+              <ul className="list-disc list-inside text-lg font-sans mb-8">
+                <li>Harvard College (with a likely letter)</li>
+                <li>Yale University (with a likely letter)</li>
+                <li>Princeton University</li>
+                <li>Johns Hopkins University</li>
+                <li>Northwestern University</li>
+                <li>Duke University</li>
+                <li>Cornell University</li>
+                <li>Tufts University</li>
+                <li>Emory University</li>
+                <li>University of Richmond (with a full ride)</li>
+                <li>Case Western Reserve University</li>
+                <li>Northeastern University</li>
+                <li>UMass Amherst</li>
+                <li>Tulane University</li>
+                <li>UMass Boston</li>
+              </ul>
               <p className="text-lg font-sans mb-8">
-                I am dedicated to providing high-quality feedback to help you improve your essays. With my guidance, you can refine your work to perfection.
+                I am dedicated to providing high-quality feedback to help you improve your essays.
+                With my guidance, you can refine your work to perfection.
               </p>
             </div>
           </div>

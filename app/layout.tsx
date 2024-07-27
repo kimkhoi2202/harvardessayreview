@@ -13,7 +13,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Harvard Essay Review",
-  description: "Get your college essay reviewed by a Harvard student for only $5!",
+  description: "Affordable, high-quality reviews from a Harvard student to help your application stand out.",
 };
 
 interface LayoutProps {
