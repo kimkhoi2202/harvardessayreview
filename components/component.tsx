@@ -352,7 +352,7 @@ export default function Component() {
                 Submit
               </Button>
             </form>
-            <p className="text-center mt-8 mb-4">After you submit the form, I will reach out to you about the payments. Payments integrated into the website feature will be coming soon. Thank you for your patience.</p>
+            <p className="text-center mt-8">After you submit the form, I will reach out to you about the payments. Payments integrated into the website feature will be coming soon. Thank you for your patience.</p>
           </div>
         </section>
       </main>
