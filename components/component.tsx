@@ -206,7 +206,7 @@ export default function Component() {
                 allowFullScreen
                 className="w-full max-w-md rounded-lg shadow-lg mb-8"
               />
-              <Carousel className="w-full max-w-md" style={{ height: "950px" }}>
+              <Carousel className="w-full max-w-md mb-4" style={{ height: "655px" }}>
                 <CarouselContent className="flex">
                   <CarouselItem>
                     <div className="flex justify-center items-center h-full">
