@@ -3,6 +3,7 @@ import { Eczar } from 'next/font/google';
 import { Cormorant_Garamond } from 'next/font/google';
 import { Poppins } from 'next/font/google';
 import './styles.css';
+import { Analytics } from '@vercel/analytics/react';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -23,8 +24,12 @@ interface LayoutProps {
 export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en">
+      <head>
+        <title>Harvard Essay Review</title>
+      </head>
       <body className={poppins.variable}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
