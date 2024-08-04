@@ -97,7 +97,7 @@ export default function Component() {
                 document.getElementById("how-it-works")?.scrollIntoView({ behavior: "smooth" })
               }
             >
-              How it Works
+              How It Works
             </button>
             <button
               className="hover:underline font-sans text-white"
