@@ -35,13 +35,13 @@ export default function Component() {
       ...prevData,
       [id]: id === "wordCount" ? parseInt(value, 10) || 0 : value,
     }));
-  
+
     if (id === "wordCount") {
       const wordCount = parseInt(value, 10) || 0;
       const calculatedCost = wordCount * 0.1;
       setCost(parseFloat(calculatedCost.toFixed(2)));
     }
-  };  
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -366,6 +366,7 @@ export default function Component() {
       <footer className="bg-[#A51C30] text-white py-6">
         <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
           <p className="text-sm font-sans">© 2024 Harvard Essay Review. All rights reserved.</p>
+          <p className="text-sm font-sans">Support: chrisanderp.college@gmail.com</p>
           <p className="text-sm font-sans">
             Website created by&nbsp;
             <a className="hover:underline" href="#">
