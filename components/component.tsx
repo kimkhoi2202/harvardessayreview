@@ -22,7 +22,7 @@ export default function Component() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    social: "",
+    phoneNumber: "",
     essay: "",
     wordCount: 0,
     additionalComment: "",
@@ -35,13 +35,13 @@ export default function Component() {
       ...prevData,
       [id]: id === "wordCount" ? parseInt(value, 10) || 0 : value,
     }));
-
+  
     if (id === "wordCount") {
       const wordCount = parseInt(value, 10) || 0;
       const calculatedCost = wordCount * 0.1;
       setCost(parseFloat(calculatedCost.toFixed(2)));
     }
-  };
+  };  
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -313,10 +313,17 @@ export default function Component() {
                   <Input className="font-sans text-black" id="email" placeholder="Enter your email" type="email" value={formData.email} onChange={handleChange} />
                 </div>
                 <div>
-                  <Label className="font-sans text-black" htmlFor="social">
-                    Social Media Handles (optional)
+                  <Label className="font-sans text-black" htmlFor="phoneNumber">
+                    Phone Number
                   </Label>
-                  <Input className="font-sans text-black" id="social" placeholder="Enter your social media handles" type="text" value={formData.social} onChange={handleChange} />
+                  <Input
+                    className="font-sans text-black"
+                    id="phoneNumber"
+                    placeholder="Enter your phone number"
+                    type="tel"
+                    value={formData.phoneNumber}
+                    onChange={handleChange}
+                  />
                 </div>
                 <div>
                   <Label className="font-sans text-black" htmlFor="essay">
@@ -326,7 +333,7 @@ export default function Component() {
                 </div>
                 <div>
                   <Label className="font-sans text-black" htmlFor="wordCount">
-                    Word Count
+                    Word Count (Enter word count for pricing)
                   </Label>
                   <Input className="font-sans text-black" id="wordCount" placeholder="Enter total word count" type="number" value={formData.wordCount} onChange={handleChange} />
                 </div>
@@ -335,7 +342,7 @@ export default function Component() {
                     Additional Comment
                   </Label>
                   <textarea
-                    className="font-sans text-black border border-black rounded-md px-3 py-2 text-sm placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-950 focus-visible:ring-offset-2 w-full"
+                    className="font-sans text-black border rounded-md px-3 py-2 text-sm placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-950 focus-visible:ring-offset-2 w-full"
                     id="additionalComment"
                     placeholder="Enter any additional comments"
                     value={formData.additionalComment}
