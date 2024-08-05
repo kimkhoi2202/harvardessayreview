@@ -33,11 +33,11 @@ async function authorize() {
 }
 
 export async function POST(request: NextRequest) {
-  const { name, email, social, wordCount, essay, additionalComment } = await request.json();
+  const { name, email, phoneNumber, wordCount, essay, additionalComment } = await request.json();
   const auth = await authorize();
   const sheets = google.sheets({ version: 'v4', auth });
 
-  const values = [[name, email, social, wordCount, essay, additionalComment]];
+  const values = [[name, email, phoneNumber, wordCount, essay, additionalComment]];
   const resource = { values };
 
   try {

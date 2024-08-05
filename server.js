@@ -64,8 +64,8 @@ function startServer(auth) {
   const sheets = google.sheets({ version: "v4", auth });
 
   app.post("/submit", (req, res) => {
-    const { name, email, social, essay } = req.body;
-    const values = [[name, email, social, essay]];
+    const { name, email, phoneNumber, essay } = req.body;
+    const values = [[name, email, phoneNumber, essay]];
     const resource = { values };
 
     sheets.spreadsheets.values.append(
